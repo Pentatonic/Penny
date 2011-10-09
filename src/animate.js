@@ -89,6 +89,7 @@ function retroClock(){
 		flip('minutesUpLeft', 'minutesDownLeft', m1, 'Double/Up/Left/', 'Double/Down/Left/');
 		m1_current = m1;
 	}
+    /*
 	if (s2 != s2_current) {
 		flip('secondsUpRight', 'secondsDownRight',s2, 'Double/Up/Right/', 'Double/Down/Right/');			
 		s2_current = s2;
@@ -97,6 +98,7 @@ function retroClock(){
 		flip('secondsUpLeft', 'secondsDownLeft', s1, 'Double/Up/Left/', 'Double/Down/Left/');
 		s1_current = s1;
 	}
+    */
 	
 }
 

@@ -26,16 +26,9 @@ jQuery.noConflict();
 			cssSelectorAncestor: "#jp_container_N"
 		}, [
 			{
-				title:"Song 1",
+				title:"回家路上",
 				artist:"戴佩妮",
-				mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
-				oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg",
-				poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
-			},
-			{
-				title:"Song 2",
-				artist:"Penny",
-				mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
+				mp3:"http://www.seedmusic.com.tw/penny/music.mp3",
 				poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
 			}
 		], {
@@ -63,121 +56,143 @@ jQuery.noConflict();
 </head>
 
 <body>
+<div style="border:solid; border-width:1px; border-color:#BBBBBB; position:absolute; width:180px; height:250px; overflow:hidden;">
+
+    <!--
     <div id="album-pic">
     &nbsp;
     </div>
-		<div id="wrapper">
+    -->
+    
+    
+    <div style="position:absolute;overflow:hidden;width:500px; height:28px; top:55px;">
+        &nbsp;
+        <img src="day.png" style="width:55px; position:absolute; left:4px;"/>
+        <img src="hour.png" style="width:55px; position:absolute; left:62px;"/>
+        <img src="min.png" style="width:55px;  position:absolute; left:120px;"/>
+    </div>
+    
+    
+    
+    <div id="wrapper">
 
-			<div id="back">
-				 <div id="upperHalfBack">
-					<img src="spacer.png" />
-					<img id="daysUpLeftBack" src="Double/Up/Left/0.png" />
-					<img id="daysUpRightBack" src="Double/Up/Right/0.png"/>
-					<img id="hoursUpLeftBack" src="Double/Up/Left/0.png" />
-					<img id="hoursUpRightBack" src="Double/Up/Right/0.png"/>
-					<img id="minutesUpLeftBack" src="Double/Up/Left/0.png" />
-					<img id="minutesUpRightBack" src="Double/Up/Right/0.png"/>
-					<img id="secondsUpLeftBack" src="Double/Up/Left/0.png" />
-					<img id="secondsUpRightBack" src="Double/Up/Right/0.png"/>
-				 </div>
-				 <div id="lowerHalfBack">
-					<img src="spacer.png" />
-					<img id="daysDownLeftBack" src="Double/Down/Left/0.png" />
-					<img id="daysDownRightBack" src="Double/Down/Right/0.png" />
-					<img id="hoursDownLeftBack" src="Double/Down/Left/0.png" />
-					<img id="hoursDownRightBack" src="Double/Down/Right/0.png" />
-					<img id="minutesDownLeftBack" src="Double/Down/Left/0.png" />
-					<img id="minutesDownRightBack" src="Double/Down/Right/0.png" />
-					<img id="secondsDownLeftBack" src="Double/Down/Left/0.png" />
-					<img id="secondsDownRightBack" src="Double/Down/Right/0.png" />
-				 </div>
-			</div>
-			
-			
-			<div id="front">
-				 <div id="upperHalf">
-					<img src="spacer.png" />
-					<img id="daysUpLeft" src="Double/Up/Left/0.png" />
-					<img id="daysUpRight" src="Double/Up/Right/0.png"/>
-					<img id="hoursUpLeft" src="Double/Up/Left/0.png" />
-					<img id="hoursUpRight" src="Double/Up/Right/0.png"/>
-					<img id="minutesUpLeft" src="Double/Up/Left/0.png" />
-					<img id="minutesUpRight" src="Double/Up/Right/0.png"/>
-					<img id="secondsUpLeft" src="Double/Up/Left/0.png" />
-					<img id="secondsUpRight" src="Double/Up/Right/0.png"/>
-				 </div>
-				 <div id="lowerHalf">
-					<img src="spacer.png" />
-					<img id="daysDownLeft" src="Double/Down/Left/0.png" />
-					<img id="daysDownRight" src="Double/Down/Right/0.png" />
-					<img id="hoursDownLeft" src="Double/Down/Left/0.png" />
-					<img id="hoursDownRight" src="Double/Down/Right/0.png" />
-					<img id="minutesDownLeft" src="Double/Down/Left/0.png" />
-					<img id="minutesDownRight" src="Double/Down/Right/0.png" />
-					<img id="secondsDownLeft" src="Double/Down/Left/0.png" />
-					<img id="secondsDownRight" src="Double/Down/Right/0.png" />
-				 </div>
-			</div>
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="jp_container_N" class="jp-audio">
-			<div class="jp-type-playlist">
-				<div id="jquery_jplayer_N" class="jp-jplayer"></div>
-				<div class="jp-gui">
-					<div class="jp-interface">
-						<div class="jp-progress">
-							<div class="jp-seek-bar">
-								<div class="jp-play-bar"></div>
-							</div>
-						</div>
-						<div class="jp-current-time"></div>
-						<div class="jp-duration"></div>
-						<div class="jp-controls-holder">
-							<ul class="jp-controls">
-								<li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
-								<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
-								<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-								<li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
-								<!-- <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li> -->
-								<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-								<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
-								<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
-							</ul>
-							<div class="jp-volume-bar">
-								<div class="jp-volume-bar-value"></div>
-							</div>
-							
-						</div>
-						<div class="jp-title">
-							<ul>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="jp-playlist">
-					<ul>
+        <div id="back">
+             <div id="upperHalfBack">
+                <img src="spacer.png" />
+                <img id="daysUpLeftBack" src="Double/Up/Left/0.png" />
+                <img id="daysUpRightBack" src="Double/Up/Right/0.png"/>
+                <img id="hoursUpLeftBack" src="Double/Up/Left/0.png" />
+                <img id="hoursUpRightBack" src="Double/Up/Right/0.png"/>
+                <img id="minutesUpLeftBack" src="Double/Up/Left/0.png" />
+                <img id="minutesUpRightBack" src="Double/Up/Right/0.png"/>
+                <!--
+                <img id="secondsUpLeftBack" src="Double/Up/Left/0.png" />
+                <img id="secondsUpRightBack" src="Double/Up/Right/0.png"/>
+                -->
+             </div>
+             <div id="lowerHalfBack">
+                <img src="spacer.png" />
+                <img id="daysDownLeftBack" src="Double/Down/Left/0.png" />
+                <img id="daysDownRightBack" src="Double/Down/Right/0.png" />
+                <img id="hoursDownLeftBack" src="Double/Down/Left/0.png" />
+                <img id="hoursDownRightBack" src="Double/Down/Right/0.png" />
+                <img id="minutesDownLeftBack" src="Double/Down/Left/0.png" />
+                <img id="minutesDownRightBack" src="Double/Down/Right/0.png" />
+                <!--
+                <img id="secondsDownLeftBack" src="Double/Down/Left/0.png" />
+                <img id="secondsDownRightBack" src="Double/Down/Right/0.png" />
+                -->
+             </div>
+        </div>
+        
+        
+        <div id="front">
+             <div id="upperHalf">
+                <img src="spacer.png" />
+                <img id="daysUpLeft" src="Double/Up/Left/0.png" />
+                <img id="daysUpRight" src="Double/Up/Right/0.png"/>
+                <img id="hoursUpLeft" src="Double/Up/Left/0.png" />
+                <img id="hoursUpRight" src="Double/Up/Right/0.png"/>
+                <img id="minutesUpLeft" src="Double/Up/Left/0.png" />
+                <img id="minutesUpRight" src="Double/Up/Right/0.png"/>
+                <!--
+                <img id="secondsUpLeft" src="Double/Up/Left/0.png" />
+                <img id="secondsUpRight" src="Double/Up/Right/0.png"/>
+                -->
+             </div>
+             <div id="lowerHalf">
+                <img src="spacer.png" />
+                <img id="daysDownLeft" src="Double/Down/Left/0.png" />
+                <img id="daysDownRight" src="Double/Down/Right/0.png" />
+                <img id="hoursDownLeft" src="Double/Down/Left/0.png" />
+                <img id="hoursDownRight" src="Double/Down/Right/0.png" />
+                <img id="minutesDownLeft" src="Double/Down/Left/0.png" />
+                <img id="minutesDownRight" src="Double/Down/Right/0.png" />
+                <!--
+                <img id="secondsDownLeft" src="Double/Down/Left/0.png" />
+                <img id="secondsDownRight" src="Double/Down/Right/0.png" />
+                -->
+             </div>
+        </div>
+    </div>
+    
+    
+    
+    <div id="jp_container_N" class="jp-audio">
+    
+        <div class="jp-type-playlist">
+            <div id="jquery_jplayer_N" class="jp-jplayer"></div>
+            <div class="jp-gui">
+                <div class="jp-interface">
+                    <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                            <div class="jp-play-bar"></div>
+                        </div>
+                    </div>
+                    <div class="jp-current-time"></div>
+                    <!-- <div class="jp-duration"></div> -->
+                    <div class="jp-controls-holder">
+                        <ul class="jp-controls">
+                            <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+                            <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+                            <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+                            <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+                            <!-- <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li> -->
+                            <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                            <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+                            <!-- <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>  -->
+                        </ul>
+                        <div class="jp-volume-bar">
+                            <div class="jp-volume-bar-value"></div>
+                        </div>
+                        
+                    </div>
+                    <div class="jp-title">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="jp-playlist">
+                <ul>
 
-						<li></li>
-					</ul>
-				</div>
-				<div class="jp-no-solution">
-					<span>Update Required</span>
-					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-				</div>
-			</div>
-		</div>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="jp-no-solution">
+                <span>Update Required</span>
+                To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+            </div>
+        </div>
+    </div>
+    
+    <div style="position:absolute; top:194px; width:180px;">
+        <img src="embed.png" style="position:absolute; top:8px; left:26px; width:85px;"/>
+        <img src="seed_logo.jpg" style="width:40px; padding-left:125px;"/>
+    </div>
 
+</div>
 </body>
 <script src="mootools.js" type="text/javascript"></script>
 <script src="animate.js" type="text/javascript"></script>
