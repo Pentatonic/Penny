@@ -50,31 +50,31 @@ jQuery.noConflict();
 				mp3:"http://www.seedmusic.com.tw/penny/music.mp3"
 			},
 			{
-				title:"回家路上",
+				title:"Song2",
 				artist:"",
 				mp3:"http://www.seedmusic.com.tw/penny/music.mp3"
 			}
 			,
 			{
-				title:"回家路上",
+				title:"Song3",
 				artist:"",
 				mp3:"http://www.seedmusic.com.tw/penny/music.mp3"
 			}
 			,
 			{
-				title:"回家路上",
+				title:"Song4",
 				artist:"",
 				mp3:"http://www.seedmusic.com.tw/penny/music.mp3"
 			}
 			,
 			{
-				title:"回家路上",
+				title:"Song5",
 				artist:"",
 				mp3:"http://www.seedmusic.com.tw/penny/music.mp3"
 			}
 			,
 			{
-				title:"回家路上",
+				title:"Song6",
 				artist:"",
 				mp3:"http://www.seedmusic.com.tw/penny/music.mp3"
 			}
@@ -87,8 +87,9 @@ jQuery.noConflict();
 			supplied: "mp3",
 			loop: true
 		});
-		
-		
+		$('#scrollbar1').tinyscrollbar();
+		setTimeout("refreshScroll()", 1000);
+        
 		$("#div_seed_logo").click(function(){
 			window.open("http://www.seedmusic.com.tw");
 		});
@@ -96,9 +97,8 @@ jQuery.noConflict();
 		$("#div_embed_btn").click(function(){
 			$("#embed_syntax").fadeToggle("normal");
 		});
-		$('#scrollbar1').tinyscrollbar();
-		setTimeout("refreshScroll()", 1000);
 		
+        $("#embed_syntax").text('<iframe src="" scrolling="no" frameborder="0" style="overflow:hidden; width:180px; height:300px;"');
 	});
 })(jQuery);
 
@@ -115,8 +115,57 @@ function refreshScroll() {
     width:300px;
     height:300px;
 }
+
+#div_embed_btn {
+    position:absolute;
+    top:8px;
+    left:26px;
+    width:85px;
+    cursor:pointer;
+    background:url('embed.png');
+}
+
+#div_embed_btn:hover {
+
+}
+
+#div_blog_btn {
+    position:absolute;
+    top:8px;
+    left:26px;
+    width:85px;
+    cursor:pointer;
+    background:url('embed.png');
+}
+
+#div_blog_btn:hover {
+    
+}
+
+#div_seed_logo {
+    position:absolute;
+    left: 130px;
+    width:50px;
+    height:63px;
+    cursor:pointer;
+    background:url('seed_logo.jpg');
+}
+
+#div_seed_logo:hover {
+
+}
+
+#embed_syntax {
+    display: none;
+    position:absolute;
+    width:100px;
+    z-index:100;
+    background-color:#FFFFFF;
+    font
+}
+
 #scrollbar1 { width: 180px; /*margin: 20px 0 10px;*/ }
-#scrollbar1 .viewport { width: 180px; height: 100px; overflow: hidden; position: absolute; }
+#scrollbar1 .viewport { width: 180px; height: 86px; overflow: hidden; position: absolute; }
 #scrollbar1 .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
 #scrollbar1 .scrollbar{ z-index:1; background: transparent url(images/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; }
 #scrollbar1 .track { background: transparent url(images/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
@@ -128,7 +177,7 @@ function refreshScroll() {
 </head>
 
 <body>
-<div style="border:solid; border-width:1px; border-color:#BBBBBB; position:absolute; width:180px; height:250px; overflow:hidden;">
+<div style="border:solid; border-width:1px; border-color:#BBBBBB; position:absolute; width:180px; height:320px; overflow:hidden;">
 
     <!--
     <div id="album-pic">
@@ -265,16 +314,17 @@ function refreshScroll() {
         </div>
     </div>
     
-    <div style="display:none; position:absolute; top:194px; width:180px;">
-        <div id="div_embed_btn" style="position:absolute; top:8px; left:26px; width:85px; cursor:pointer; background:url('embed.png');">&nbsp;</div>
-        <div id="div_seed_logo" style="position:absolute; width:40px; cursor:pointer; background:url('seed_logo.jpg');">&nbsp;</div>
+    <div style="position:absolute; top:250px; width:180px;">
+        <div id="div_embed_btn">&nbsp;</div>
+        <div id="div_blog_btn">&nbsp;</div>
+        <div id="div_seed_logo">&nbsp;</div>
     </div>
 	
 
 
 </div>
-<div id="embed_syntax" style="display: none; position:absolute; width:100px; z-index:100; background-color:#FFFFFF;">
-	123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123 123
+<div id="embed_syntax">
+
 </div>
 
 </body>
