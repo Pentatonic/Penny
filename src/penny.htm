@@ -6,17 +6,18 @@
 <title>Penny 戴佩妮 - 回家路上</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.tinyscrollbar.min.js"></script>
 <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
 <script type="text/javascript" src="js/jplayer.playlist.min.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="flip_clock.css" />
 
 
 <script type="text/javascript">
 
 
 //<![CDATA[
+jQuery.noConflict();
 
 function getUrlVars()
 {
@@ -31,9 +32,14 @@ function getUrlVars()
 	}
     return vars;
 }
+function refreshScroll() {
+	jQuery('#scrollbar1').tinyscrollbar({ sizethumb: 30 });
+}
 
-jQuery.noConflict();
- (function($) {
+(function($) {
+	
+	
+	
 	$(document).ready(function(){
 		
 		var urlVars = getUrlVars();
@@ -88,6 +94,7 @@ jQuery.noConflict();
 		});
 		$('#scrollbar1').tinyscrollbar();
 		setTimeout("refreshScroll()", 1000);
+		setTimeout("refreshScroll()", 3000);
         
 		$("#div_seed_logo").click(function(){
 			window.open("http://www.seedmusic.com.tw");
@@ -99,34 +106,41 @@ jQuery.noConflict();
 		
 		$("#div_embed_btn").click(function(){
 			$("#embed_syntax").fadeToggle("normal");
+			$(this).toggleClass('div_embed_btn_pressed');
 		});
 		
         $("#embed_syntax").text('<iframe src="http://127.0.0.1/penny.htm?autoPlay=1" scrolling="no" frameborder="0" style="overflow:hidden; width:180px; height:300px;"></iframe>');
 	});
+	
 })(jQuery);
 
-function refreshScroll() {
-	jQuery('#scrollbar1').tinyscrollbar({ sizethumb: 30 });
-}
+
 
 //]]>
 
 </script>
 <style type="text/css">
 #album-pic {
-    background: url("1317620972.jpg") no-repeat;
-    width:300px;
-    height:300px;
+	posistion: absolute;
+	width: 180px;
+	height:146px;
+	overflow:hidden;
+    background: url("images/PennyCover.jpg") no-repeat;
 }
 
 #div_embed_btn {
-    position:absolute;
-    top:5px;
+	position:absolute;
+    top:12px;
     left:0px;
     width:75px;
 	height:28px;
     cursor:pointer;
-    background-image:url('embed.png');
+    background-image:url('images/embed.png');
+	background-repeat: no-repeat;
+}
+
+.div_embed_btn_pressed {
+    background-image:url('images/blog.png');
 	background-repeat: no-repeat;
 }
 
@@ -136,12 +150,12 @@ function refreshScroll() {
 
 #div_blog_btn {
 	position:absolute;
-    top:5px;
+    top:12px;
     left:69px;
     width:75px;
 	height:28px;
     cursor:pointer;
-    background-image:url('blog.png');
+    background-image:url('images/blog.png');
 	background-repeat: no-repeat;
 }
 
@@ -156,7 +170,7 @@ function refreshScroll() {
     width:40px;
     height:50px;
     cursor:pointer;
-    background-image:url('seed_logo.jpg');
+    background-image:url('images/seed_logo.jpg');
 	background-repeat: no-repeat;
 }
 
@@ -167,8 +181,8 @@ function refreshScroll() {
 #embed_syntax {
     display: none;
     position:absolute;
-    width:150px;
-	height: 200px;
+    width:160px;
+	height: 144px;
     z-index:100;
     background-color:#FFFFFF;
     font-family:Tahoma;
@@ -176,12 +190,12 @@ function refreshScroll() {
 	font-weight: bold;
 	color: #AAAAAA;
 	padding:10px;
-	left: 10px;
-	top: 10px;
+	left: 9px;
+	top: 211px;
 }
 
 #scrollbar1 { width: 180px; /*margin: 20px 0 10px;*/ }
-#scrollbar1 .viewport { width: 180px; height: 86px; overflow: hidden; position: absolute; }
+#scrollbar1 .viewport { width: 180px; height: 70px; overflow: hidden; position: absolute; }
 #scrollbar1 .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
 #scrollbar1 .scrollbar{ z-index:1; background: transparent url(images/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; }
 #scrollbar1 .track { background: transparent url(images/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
@@ -192,30 +206,18 @@ function refreshScroll() {
 
 </head>
 
-<body>
-<div style="border:solid; border-width:1px; border-color:#BBBBBB; position:absolute; width:180px; height:305px; overflow:hidden;">
+<body style="">
+<div style="background-color:#000000;border:solid; border-width:1px; border-color:#BBBBBB; position:absolute; width:180px; height:417px; overflow:hidden;">
 
-    <!--
     <div id="album-pic">
     &nbsp;
     </div>
-    -->
-    
-    
-    <div style="position:absolute;overflow:hidden;width:500px; height:28px; top:55px;">
-        &nbsp;
-        <img src="day.png" style="width:55px; position:absolute; left:4px;"/>
-        <img src="hour.png" style="width:55px; position:absolute; left:62px;"/>
-        <img src="min.png" style="width:55px;  position:absolute; left:120px;"/>
-    </div>
-    
-    
     
     <div id="wrapper">
 
         <div id="back">
              <div id="upperHalfBack">
-                <img src="spacer.png" />
+                <img src="images/spacer.png" />
                 <img id="daysUpLeftBack" src="Double/Up/Left/0.png" />
                 <img id="daysUpRightBack" src="Double/Up/Right/0.png"/>
                 <img id="hoursUpLeftBack" src="Double/Up/Left/0.png" />
@@ -228,7 +230,7 @@ function refreshScroll() {
                 -->
              </div>
              <div id="lowerHalfBack">
-                <img src="spacer.png" />
+                <img src="images/spacer.png" />
                 <img id="daysDownLeftBack" src="Double/Down/Left/0.png" />
                 <img id="daysDownRightBack" src="Double/Down/Right/0.png" />
                 <img id="hoursDownLeftBack" src="Double/Down/Left/0.png" />
@@ -245,7 +247,7 @@ function refreshScroll() {
         
         <div id="front">
              <div id="upperHalf">
-                <img src="spacer.png" />
+                <img src="images/spacer.png" />
                 <img id="daysUpLeft" src="Double/Up/Left/0.png" />
                 <img id="daysUpRight" src="Double/Up/Right/0.png"/>
                 <img id="hoursUpLeft" src="Double/Up/Left/0.png" />
@@ -258,7 +260,7 @@ function refreshScroll() {
                 -->
              </div>
              <div id="lowerHalf">
-                <img src="spacer.png" />
+                <img src="images/spacer.png" />
                 <img id="daysDownLeft" src="Double/Down/Left/0.png" />
                 <img id="daysDownRight" src="Double/Down/Right/0.png" />
                 <img id="hoursDownLeft" src="Double/Down/Left/0.png" />
@@ -273,7 +275,12 @@ function refreshScroll() {
         </div>
     </div>
     
-    
+    <div style="position:absolute;overflow:hidden;width:300px; height:28px; top:198px;">
+        &nbsp;
+        <img src="images/day.png" style="width:55px; position:absolute; left:4px;"/>
+        <img src="images/hour.png" style="width:55px; position:absolute; left:62px;"/>
+        <img src="images/min.png" style="width:55px;  position:absolute; left:120px;"/>
+    </div>
     
     <div id="jp_container_N" class="jp-audio">
     
@@ -330,7 +337,7 @@ function refreshScroll() {
         </div>
     </div>
     
-    <div style="position:absolute; top:244px; width:180px; height: 50px;">
+    <div style="position:absolute; top:367px; width:180px; height: 50px; background-color:#FFFFFF;">
         <div id="div_embed_btn">&nbsp;</div>
         <div id="div_blog_btn">&nbsp;</div>
         <div id="div_seed_logo">&nbsp;</div>
@@ -344,6 +351,6 @@ function refreshScroll() {
 </div>
 
 </body>
-<script src="mootools.js" type="text/javascript"></script>
-<script src="animate.js" type="text/javascript"></script>
+<script src="js/mootools.js" type="text/javascript"></script>
+<script src="js/animate.js" type="text/javascript"></script>
 </html>

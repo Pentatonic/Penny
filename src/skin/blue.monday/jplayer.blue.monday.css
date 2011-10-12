@@ -29,7 +29,7 @@ div.jp-video {
 	/*border:1px solid #009be3;
 	background-color:#eee;*/
 	position:absolute;
-	top:88px;
+	top:227px;
 }
 div.jp-audio {
 	width:180px;
@@ -337,6 +337,7 @@ div.jp-duration {
 div.jp-current-time {
 	float: left;
 	display:inline;
+	padding-left:3px;
 }
 div.jp-duration {
 	float: right;
@@ -363,7 +364,7 @@ div.jp-title {
 div.jp-title,
 div.jp-playlist {
 	width:100%;
-	background-color:#ccc;
+	background-color:#EEEEEE;
 	/*border-top:1px solid #009be3;*/
 }
 div.jp-type-single div.jp-title,
@@ -375,7 +376,7 @@ div.jp-title ul,
 div.jp-playlist ul {
 	list-style-type:none;
 	margin:0;
-	padding:0 20px;
+	padding:0 5px;
 	font-size:.72em;
 }
 
@@ -384,8 +385,8 @@ div.jp-title li {
 	font-weight:bold;
 }
 div.jp-playlist li {
-	padding:5px 0 4px 20px;
-	border-bottom:1px solid #eee;
+	padding:3px 0 1px 20px;
+	/*border-bottom:1px solid #CCCCCC;*/
 }
 
 div.jp-playlist li div {
