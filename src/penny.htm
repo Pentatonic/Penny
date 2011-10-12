@@ -17,6 +17,8 @@
 
 
 //<![CDATA[
+
+var embed_url="http://127.0.0.1/penny.htm";
 jQuery.noConflict();
 
 function getUrlVars()
@@ -38,7 +40,10 @@ function refreshScroll() {
 
 (function($) {
 	
-	
+	function embed_systax(autoplay) {
+        var enable = autoplay ? "1" : "0";
+        $("#embed_syntax").text('<iframe src="'+embed_url+'?autoPlay='+enable+'" scrolling="no" frameborder="0" style="overflow:hidden; width:180px; height:300px;"></iframe>');
+    }
 	
 	$(document).ready(function(){
 		
@@ -50,36 +55,36 @@ function refreshScroll() {
 			cssSelectorAncestor: "#jp_container_N"
 		}, [
 			{
-				title:"回家路上",
+				title:"01 回家路上",
 				artist:"",
 				mp3:"http://www.seedmusic.com.tw/penny/music.mp3"
 			},
 			{
-				title:"Song2",
+				title:"02 Song2",
 				artist:"",
 				mp3:"http://www.seedmusic.com.tw/penny/music.mp3"
 			}
 			,
 			{
-				title:"Song3",
+				title:"03 Song3",
 				artist:"",
 				mp3:"http://www.seedmusic.com.tw/penny/music.mp3"
 			}
 			,
 			{
-				title:"Song4",
+				title:"04 Song4",
 				artist:"",
 				mp3:"http://www.seedmusic.com.tw/penny/music.mp3"
 			}
 			,
 			{
-				title:"Song5",
+				title:"05 Song5",
 				artist:"",
 				mp3:"http://www.seedmusic.com.tw/penny/music.mp3"
 			}
 			,
 			{
-				title:"Song6",
+				title:"06 Song6",
 				artist:"",
 				mp3:"http://www.seedmusic.com.tw/penny/music.mp3"
 			}
@@ -105,11 +110,22 @@ function refreshScroll() {
 		});
 		
 		$("#div_embed_btn").click(function(){
-			$("#embed_syntax").fadeToggle("normal");
-			$(this).toggleClass('div_embed_btn_pressed');
+			$("#div_embed_syntax").fadeToggle("normal");
+			//$(this).toggleClass('div_embed_btn_pressed');
 		});
-		
-        $("#embed_syntax").text('<iframe src="http://127.0.0.1/penny.htm?autoPlay=1" scrolling="no" frameborder="0" style="overflow:hidden; width:180px; height:300px;"></iframe>');
+		embed_systax(true);
+        //$("#embed_syntax").text('<iframe src="'+embed_url+'?autoPlay=1" scrolling="no" frameborder="0" style="overflow:hidden; width:180px; height:300px;"></iframe>');
+        
+        $("#div_autoplay_btn").click(function(){
+			$(this).toggleClass('div_autoplay_btn_enable');
+            $(this).toggleClass('div_autoplay_btn_disable');
+            if ($(this).hasClass('div_autoplay_btn_enable')) {
+                embed_systax(true);
+            }
+            else {
+                embed_systax(false);
+            }
+		});
 	});
 	
 })(jQuery);
@@ -131,8 +147,8 @@ function refreshScroll() {
 #div_embed_btn {
 	position:absolute;
     top:12px;
-    left:0px;
-    width:75px;
+    left:2px;
+    width:70px;
 	height:28px;
     cursor:pointer;
     background-image:url('images/embed.png');
@@ -151,8 +167,8 @@ function refreshScroll() {
 #div_blog_btn {
 	position:absolute;
     top:12px;
-    left:69px;
-    width:75px;
+    left:70px;
+    width:70px;
 	height:28px;
     cursor:pointer;
     background-image:url('images/blog.png');
@@ -178,20 +194,39 @@ function refreshScroll() {
 
 }
 
-#embed_syntax {
+#div_embed_syntax {
     display: none;
     position:absolute;
+    overflow:hidden;
     width:160px;
 	height: 144px;
     z-index:100;
     background-color:#FFFFFF;
     font-family:Tahoma;
-	font-size:11px;
+	font-size:10px;
 	font-weight: bold;
 	color: #AAAAAA;
 	padding:10px;
 	left: 9px;
-	top: 211px;
+	top: 210px;
+}
+
+#div_autoplay_btn {
+	position:absolute;
+    top:130px;
+    left:105px;
+    width:70px;
+	height:28px;
+    cursor:pointer;
+    background-repeat: no-repeat;
+}
+
+.div_autoplay_btn_enable {
+    background-image:url('images/autoplay_enable.png');
+}
+
+.div_autoplay_btn_disable {
+    background-image:url('images/autoplay_disable.png');
 }
 
 #scrollbar1 { width: 180px; /*margin: 20px 0 10px;*/ }
@@ -207,7 +242,7 @@ function refreshScroll() {
 </head>
 
 <body style="">
-<div style="background-color:#000000;border:solid; border-width:1px; border-color:#BBBBBB; position:absolute; width:180px; height:417px; overflow:hidden;">
+<div style="background-color:#EEEEEE;border:solid; border-width:1px; border-color:#BBBBBB; position:absolute; width:180px; height:417px; overflow:hidden;">
 
     <div id="album-pic">
     &nbsp;
@@ -312,9 +347,9 @@ function refreshScroll() {
                         
                     </div>
                     <div class="jp-title">
-                        <ul>
+                        <ol>
                             <li></li>
-                        </ul>
+                        </ol>
                     </div>
                 </div>
             </div>
@@ -346,8 +381,9 @@ function refreshScroll() {
 
 
 </div>
-<div id="embed_syntax">
-
+<div id="div_embed_syntax">
+    <div id="div_autoplay_btn" class="div_autoplay_btn_enable">&nbsp;</div>
+    <span id="embed_syntax"></span>
 </div>
 
 </body>

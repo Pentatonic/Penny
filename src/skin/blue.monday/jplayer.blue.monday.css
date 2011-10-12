@@ -405,14 +405,14 @@ div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
 	padding-left:7px;
 }
 div.jp-type-playlist div.jp-playlist a {
-	color: #333;
+	color: #666666;
 	text-decoration: none;
 }
 div.jp-type-playlist div.jp-playlist a:hover {
-	color:#0d88c1;
+	color:#111111;
 }
 div.jp-type-playlist div.jp-playlist a.jp-playlist-current {
-	color:#0d88c1;
+	color:#111111;
 }
 
 div.jp-type-playlist div.jp-playlist a.jp-playlist-item-remove {
