@@ -3,7 +3,7 @@
 <head>
 <meta charset=utf-8 />
 
-<title>Penny</title>
+<title>Penny 戴佩妮 - 回家路上</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.min.js"></script>
@@ -36,7 +36,6 @@ jQuery.noConflict();
  (function($) {
 	$(document).ready(function(){
 		
-		//alert(getUrlVars().length + "," + getUrlVars()['autoPlay']);
 		var urlVars = getUrlVars();
 		var autoplay = urlVars["autoPlay"] == "1" ? true : false;
 		
@@ -94,16 +93,20 @@ jQuery.noConflict();
 			window.open("http://www.seedmusic.com.tw");
 		});
 		
+		$("#div_blog_btn").click(function(){
+			window.open("http://www.facebook.com/iamPennyTai");
+		});
+		
 		$("#div_embed_btn").click(function(){
 			$("#embed_syntax").fadeToggle("normal");
 		});
 		
-        $("#embed_syntax").text('<iframe src="" scrolling="no" frameborder="0" style="overflow:hidden; width:180px; height:300px;"');
+        $("#embed_syntax").text('<iframe src="http://127.0.0.1/penny.htm?autoPlay=1" scrolling="no" frameborder="0" style="overflow:hidden; width:180px; height:300px;"></iframe>');
 	});
 })(jQuery);
 
 function refreshScroll() {
-	jQuery('#scrollbar1').tinyscrollbar();
+	jQuery('#scrollbar1').tinyscrollbar({ sizethumb: 30 });
 }
 
 //]]>
@@ -118,11 +121,13 @@ function refreshScroll() {
 
 #div_embed_btn {
     position:absolute;
-    top:8px;
-    left:26px;
-    width:85px;
+    top:5px;
+    left:0px;
+    width:75px;
+	height:28px;
     cursor:pointer;
-    background:url('embed.png');
+    background-image:url('embed.png');
+	background-repeat: no-repeat;
 }
 
 #div_embed_btn:hover {
@@ -130,12 +135,14 @@ function refreshScroll() {
 }
 
 #div_blog_btn {
-    position:absolute;
-    top:8px;
-    left:26px;
-    width:85px;
+	position:absolute;
+    top:5px;
+    left:69px;
+    width:75px;
+	height:28px;
     cursor:pointer;
-    background:url('embed.png');
+    background-image:url('blog.png');
+	background-repeat: no-repeat;
 }
 
 #div_blog_btn:hover {
@@ -144,11 +151,13 @@ function refreshScroll() {
 
 #div_seed_logo {
     position:absolute;
-    left: 130px;
-    width:50px;
-    height:63px;
+	top: 0px;
+    left: 140px;
+    width:40px;
+    height:50px;
     cursor:pointer;
-    background:url('seed_logo.jpg');
+    background-image:url('seed_logo.jpg');
+	background-repeat: no-repeat;
 }
 
 #div_seed_logo:hover {
@@ -158,10 +167,17 @@ function refreshScroll() {
 #embed_syntax {
     display: none;
     position:absolute;
-    width:100px;
+    width:150px;
+	height: 200px;
     z-index:100;
     background-color:#FFFFFF;
-    font
+    font-family:Tahoma;
+	font-size:11px;
+	font-weight: bold;
+	color: #AAAAAA;
+	padding:10px;
+	left: 10px;
+	top: 10px;
 }
 
 #scrollbar1 { width: 180px; /*margin: 20px 0 10px;*/ }
@@ -177,7 +193,7 @@ function refreshScroll() {
 </head>
 
 <body>
-<div style="border:solid; border-width:1px; border-color:#BBBBBB; position:absolute; width:180px; height:320px; overflow:hidden;">
+<div style="border:solid; border-width:1px; border-color:#BBBBBB; position:absolute; width:180px; height:305px; overflow:hidden;">
 
     <!--
     <div id="album-pic">
@@ -314,7 +330,7 @@ function refreshScroll() {
         </div>
     </div>
     
-    <div style="position:absolute; top:250px; width:180px;">
+    <div style="position:absolute; top:244px; width:180px; height: 50px;">
         <div id="div_embed_btn">&nbsp;</div>
         <div id="div_blog_btn">&nbsp;</div>
         <div id="div_seed_logo">&nbsp;</div>
