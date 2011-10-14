@@ -80,6 +80,10 @@ function refreshScroll() {
 		setTimeout("refreshScroll()", 1000);
 		setTimeout("refreshScroll()", 3000);
         
+		$("#img_album").click(function(){
+			window.open(embed_url+"?autoPlay=1");
+		});
+		
 		$("#div_seed_logo").click(function(){
 			window.open("http://www.seedmusic.com.tw");
 		});
@@ -114,7 +118,7 @@ function refreshScroll() {
 
 </script>
 <style type="text/css">
-#album-pic {
+#div_album_pic {
 	posistion: absolute;
 	width: 180px;
 	height:146px;
@@ -221,10 +225,23 @@ function refreshScroll() {
 
 <body style="">
 <div style="background-color:#EEEEEE;border:solid; border-width:1px; border-color:#BBBBBB; position:absolute; left:0px; top:0px; width:180px; height:417px; overflow:hidden;">
+	<div style="position:absolute; left:110px; top:124px; width:100px;z-index:50; overflow: hidden;">
+		<a href="javascript: void(window.open('http://twitter.com/home/?status='.concat(encodeURIComponent(document.title)).concat(' ').concat(encodeURIComponent(location.href))));">
+		<img width="20" height="20" border="0" alt="貼到twitter" src="http://i165.photobucket.com/albums/u73/lunaj0201/other_webpicture/twitter.png" />
+		</a>
 
-    <div id="album-pic">
+		<a href="javascript: void(window.open('http://www.plurk.com/?qualifier=shares&status='.concat(encodeURIComponent(location.href)).concat(' ').concat('(').concat(encodeURIComponent(document.title)).concat(')')));">
+		<img width="20" height="20" border="0" alt="貼到Plurk" src="http://i165.photobucket.com/albums/u73/lunaj0201/other_webpicture/plurk_icon.png" />
+		</a>
+		<a href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ));">
+		<img width="20" height="20" border="0" alt="貼到facebook" src="http://i165.photobucket.com/albums/u73/lunaj0201/other_webpicture/facebook.png"  />
+	</a>
+
+	</div>
+	
+    <div id="div_album_pic">
     &nbsp;
-	<img src="images/PennyCover.png" style="position:absolute; left:0px; top:0px;" />
+	<img id="img_album" src="images/PennyCover.png" style="position:absolute; left:0px; top:0px; cursor:pointer;" />
     </div>
     
     <div id="wrapper">
